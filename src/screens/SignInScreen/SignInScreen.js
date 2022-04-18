@@ -1,15 +1,35 @@
 import { View, Text, Image, StyleSheet, Button, Alert, Pressable } from 'react-native'
 import React, { useState } from 'react'
+// import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
+
+// GoogleSignin.configure({
+//     webClientId: '484690292757-3hum28c9nurrpu9lm5oh9amugrahiifq.apps.googleusercontent.com',
+//     offlineAccess: true,
+// })
 
 const SignInScreen = () => {
     const logo = require('../../../assets/upbringo-logo.png');
     const [loggedIn, setloggedIn] = useState(false);
     const [userInfo, setuserInfo] = useState([]);
+    const [loaded, setLoaded] = useState(false);
+    // signIn = async () => {
+    //     try {
+    //         await GoogleSignin.hasPlayServices();
+    //         setuserInfo(await GoogleSignin.signIn());
+    //         setLoaded(true);
+    //     }
+    //     catch (err) {
+    //         console.log(err.message);
+    //     }
+    // }
     return (
         <View style={styles.container}>
             {/* <Text>SignInScreen</Text> */}
             <Image source={logo} />
             <Text style={styles.title}>Please Select a Login Method</Text>
+            {/* <Pressable style={styles.googleSignInBtn} onPress={() => Alert.alert("Google")}>
+                <Text style={styles.text}>Sign In with Google</Text>
+            </Pressable> */}
             <Pressable style={styles.googleSignInBtn} onPress={() => Alert.alert("Google")}>
                 <Text style={styles.text}>Sign In with Google</Text>
             </Pressable>
